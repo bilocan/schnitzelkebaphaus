@@ -1,0 +1,380 @@
+:root {
+  --green: #0f472c;
+  --green-ink: #0c3a24;
+  --red: #8e3116;
+  --navy: #0f3d5b;
+  --paper: #f6f3ec;
+  --card: #fffdf8;
+  --ink: #1c1915;
+  --muted: #5c564c;
+  --line: #e4ddd0;
+  --font: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  --sans: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a { color: var(--green); }
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  background: var(--ink);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  z-index: 3;
+}
+
+.skip:focus { top: 0.75rem; }
+
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  background: rgba(246, 243, 236, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.brand img {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  flex: none;
+}
+
+.brand span {
+  line-height: 1.15;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background: var(--green);
+  color: #f6f3ec;
+  text-decoration: none;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  flex: none;
+}
+
+.button:hover { background: var(--green-ink); }
+
+.button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+.button-large {
+  min-height: 3.25rem;
+  padding: 0.75rem 1.4rem;
+  font-size: 1.125rem;
+}
+
+main {
+  width: min(68rem, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.75rem 0 2.25rem;
+}
+
+.mark {
+  width: min(16rem, 72vw);
+  margin: 0 auto;
+}
+
+.ribbon {
+  margin: 0 0 0.4rem;
+  color: var(--green);
+  font-family: var(--font);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+}
+
+h1, h2, h3 { font-family: var(--font); font-weight: 700; line-height: 1.1; }
+
+h1 {
+  margin: 0 0 0.7rem;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin: 0 0 1.25rem;
+  max-width: 36rem;
+  font-size: 1.15rem;
+}
+
+.where {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+}
+
+.hours, .menu, .visit {
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.8rem;
+}
+
+.hours dl { margin: 0; }
+
+.hours div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.hours dt { font-weight: 650; }
+
+.hours dd { margin: 0; }
+
+.note {
+  margin: 0 0 1.1rem;
+  color: var(--muted);
+}
+
+.board {
+  background: #14120f;
+  color: #f4efe6;
+  border: 0;
+  border-radius: 1.25rem;
+  margin-top: 2.25rem;
+  padding: 1.5rem 1.15rem 0.75rem;
+}
+
+.board h2,
+.board h3 { color: #f0d48a; }
+
+.board .note { color: #c4b8a6; }
+
+.jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.5rem;
+}
+
+.jumps a {
+  color: #f4efe6;
+  text-decoration: none;
+  border: 1px solid rgba(244, 239, 230, 0.28);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+}
+
+.group { margin: 0 0 1.35rem; }
+
+.group h3 {
+  margin: 0.4rem 0 0.15rem;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dishes, .plain {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dishes li,
+.plain li {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  grid-template-areas: "photo name price" "photo desc price";
+  column-gap: 0.75rem;
+  align-items: center;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(244, 239, 230, 0.14);
+}
+
+.plain li {
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  grid-template-areas: "photo name price";
+  padding: 0.55rem 0;
+}
+
+.plate {
+  grid-area: photo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4.75rem;
+}
+
+.plate.tall { height: 5.5rem; }
+
+.plate img {
+  width: auto;
+  max-width: 5.5rem;
+  max-height: 4.75rem;
+  object-fit: contain;
+}
+
+.plate.tall img { max-height: 5.5rem; }
+
+.dishes h4 {
+  grid-area: name;
+  margin: 0;
+  color: #f4efe6;
+  font-family: var(--sans);
+  font-size: 1.02rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.dishes li > p {
+  grid-area: desc;
+  margin: 0.1rem 0 0;
+  color: #c4b8a6;
+  font-size: 0.9rem;
+}
+
+.dishes .price,
+.plain b {
+  grid-area: price;
+  margin: 0;
+  color: #f4efe6;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.plain span {
+  grid-area: name;
+  color: #f4efe6;
+}
+
+.plain { margin: 0 0 0.25rem; }
+
+address {
+  font-style: normal;
+}
+
+address p { margin: 0 0 0.85rem; }
+
+footer {
+  width: min(68rem, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+footer h2 {
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
+footer p { margin: 0 0 0.75rem; }
+
+@media (min-width: 800px) {
+  .bar { padding: 0.85rem 1.5rem; }
+
+  .brand { font-size: 1.15rem; }
+
+  .hero {
+    grid-template-columns: 18rem 1fr;
+    align-items: center;
+    gap: 3rem;
+    padding: 3.5rem 0 4rem;
+  }
+
+  .mark { width: 18rem; margin: 0; }
+
+  .hours dl {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .hours div {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 0.9rem;
+    padding: 1.1rem 1.15rem;
+  }
+
+  .hours dd { margin-top: 0.35rem; font-size: 1.25rem; }
+
+  .board {
+    padding: 2rem 1.75rem 1rem;
+  }
+
+  .board .group {
+    width: min(40rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .board h2,
+  .board .note,
+  .board .jumps {
+    width: min(40rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .group h3 { scroll-margin-top: 5.5rem; }
+
+  .visit address {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .visit address p { margin: 0; }
+}
+
